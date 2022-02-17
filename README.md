@@ -1,1 +1,9 @@
-# portfolio_app
+# Developer Portfolio
+
+## Installation
+
+```bash
+npm run dev
+```
+
+---
