@@ -2,8 +2,8 @@ import { FunctionComponent } from "react";
 import { IconType } from "react-icons";
 export interface Service {
   Icon: IconType;
-  title: string;
-  about: string;
+  name: string;
+  description: string;
 }
 
 export interface Skill {

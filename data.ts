@@ -6,43 +6,6 @@ import { IProject, Service, Skill } from './types'
 
 import { BsCircleFill } from 'react-icons/bs'
 
-export const services: Service[] = [
-  {
-    Icon: RiComputerLine,
-    title: 'Frontend Development',
-    about:
-      'I can build a beautiful and scalable SPA using <b> HTML</b>,<b>CSS</b>   and <b>React.js</b> ',
-  },
-  {
-    Icon: AiOutlineApi,
-    title: 'API Development',
-    about: 'I can develop robust  REST API using <b>Node API</b> ',
-  },
-  {
-    Icon: MdDeveloperMode,
-    title: 'Competitive Coder',
-    about:
-      'a daily problem solver in <b>HackerRank</b> and <b>LinkedIn Test<b> ',
-  },
-  {
-    Icon: AiOutlineAntDesign,
-    title: 'UI/UX designer',
-    about:
-      'stunning user interface designer using <b>Figma</b>  and  <b>Framer</b> ',
-  },
-  {
-    Icon: RiComputerLine,
-    title: 'Whatever',
-    about:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quis minima autem!',
-  },
-  {
-    Icon: RiComputerLine,
-    title: 'Whatever',
-    about:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic quis minima autem!',
-  },
-]
 
 export const languages: Skill[] = [
   {

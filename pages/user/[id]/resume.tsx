@@ -1,7 +1,8 @@
 import Bar from '../../../components/Bar'
 import { languages, tools } from '../../../data'
+import {getPageData} from '../../api/getData'
 
-const Resume = () => {
+const Resume = (props: any) => {
   return (
     <div className="px-6 py-2">
       {/* //! Education & Experience */}
@@ -10,26 +11,23 @@ const Resume = () => {
           <h5 className="my-3 text-2xl font-bold">Education</h5>
           <div className="">
             <h5 className="my-2 text-xl font-bold">
-              Bacholer's In Computer Science
+              {props?.education?.Degree}
             </h5>
             <p className="font-semibold">
-              University of Management & Technology (2017-2021)
+              {props.education.university_name}
             </p>
             <p className="my-3">
-              I have done my Bacholer's in Computer Science from University of
-              Management and Technology, Lahore (UMT).
+              {props.education.description}
             </p>
           </div>
         </div>
         <div>
           <h5 className="my-3 text-2xl font-bold">Experience</h5>
           <div className="">
-            <h5 className="my-2 text-xl font-bold">Website Developer Jr.</h5>
-            <p className="font-semibold">Freelancer in an co-working space</p>
+            <h5 className="my-2 text-xl font-bold">{props.experience.Name}</h5>
+            <p className="font-semibold">{props.experience.sub_name}</p>
             <p className="my-3">
-              I am doing this job because i like learn how the things actually
-              work and what is the phenomenan behind all these workings of the
-              computer system
+              {props.experience.description}
             </p>
           </div>
         </div>
@@ -60,3 +58,14 @@ const Resume = () => {
 }
 
 export default Resume
+
+export async function getServerSideProps() {
+  let resumeData = await getPageData("/api/resumes?populate=*");  
+  
+  return {
+      props: {
+        education: resumeData?.data[0]?.attributes?.Education || null,
+        experience: resumeData?.data[0]?.attributes?.Experience || null,
+      }
+  }
+}
